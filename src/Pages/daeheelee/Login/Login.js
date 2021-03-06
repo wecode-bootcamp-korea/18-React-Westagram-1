@@ -11,39 +11,40 @@ class Login extends React.Component {
       //변경이 가능한 정보
       idname: "",
       pwname: "",
-      btncolor: "skycolor",
     };
   }
 
   btnEvent = () => {
-    this.props.history.push("/main-daehee");
-  };
-
-  idinput = e => {
-    this.setState({ idname: e.target.value });
-    console.log(this.state.idname);
-    console.log(e.target);
-    {
-      this.state.idname !== "" && this.state.pwname !== ""
-        ? this.setState({ btncolor: "bluecolor" })
-        : this.setState({ btncolor: "skycolor" });
+    const { idname, pwname } = this.state;
+    if (!idname.includes("@") && pwname.length < 5) {
+      alert("다시 입력해주세요");
+      return;
     }
+    if (!idname.includes("@")) alert("아이디는 이메일 형태로 작성해주세요");
+    if (pwname.length < 5) alert("비밀번호는 5자리 이상 작성해주세요");
+    if (idname.includes("@") && pwname.length >= 5)
+      this.props.history.push("/main-daehee");
   };
 
-  pwinput = e => {
+  idhandleIdInput = e => {
+    this.setState({ idname: e.target.value });
+  };
+
+  pwhandleIdInput = e => {
     this.setState({ pwname: e.target.value });
-    console.log(this.state.pwname);
-    {
-      this.state.idname !== "" && this.state.pwname !== ""
-        ? this.setState({ btncolor: "bluecolor" })
-        : this.setState({ btncolor: "skycolor" });
+  };
+
+  handleKeyPress = e => {
+    if (e.key === "Enter") {
+      this.btnEvent();
     }
   };
 
   render() {
+    const { idname, pwname } = this.state;
+    const compareValue = idname !== "" && pwname !== "";
     return (
       <>
-        {/* {console.log(e.target)} */}
         <div className="loginBody">
           <div className="centerBody">
             <div className="main">
@@ -58,24 +59,24 @@ class Login extends React.Component {
                   <form className="inputs">
                     <input
                       className="id"
-                      onChange={this.idinput}
+                      onChange={this.idhandleIdInput}
+                      onKeyPress={this.handleKeyPress}
                       type="text"
                       placeholder="전화번호, 사용자 이름 또는 이메일"
-                      value={this.state.idname}
+                      value={idname}
                     />
                     <input
                       className="pw"
-                      onChange={this.pwinput}
+                      onChange={this.pwhandleIdInput}
+                      onKeyPress={this.handleKeyPress}
                       type="password"
                       placeholder="비밀번호"
-                      value={this.state.pwname}
+                      value={pwname}
                     />
                   </form>
-                  {/* <button className='btn'>로그인</button> */}
                   <button
-                    className="btn"
+                    className={compareValue ? "bluecolor" : ""}
                     onClick={this.btnEvent}
-                    id={this.state.btncolor}
                   >
                     로그인
                   </button>

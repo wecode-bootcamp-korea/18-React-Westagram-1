@@ -1,198 +1,197 @@
 @import "Reset.css";
 
-.loginBody{
-	margin-top:-15px;
-	background-color: rgb(250,250,250); 
-	
-	.centerBody{
-			display: flex;
-			justify-content:center;
-			align-items: center;
-			height:85vh;
-	} 
-							
-	.main{
-			display: flex;
-			justify-content:space-between;
-			position: relative;
-			height:600px;
-			width: 780px;
-	}
+.loginBody {
+  margin-top: -15px;
+  background-color: rgb(250, 250, 250);
 
-	.left{
-			height: 600px;
-			width: 420px;
-	} 
+  .centerBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+  }
 
-	.left img{
-			height: 590px;
-			width: 380px;
-	}
+  .main {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 600px;
+    width: 780px;
+  }
 
-	.right{
-			display: flex;
-			flex-direction: column;
-			margin: 15px 0px;
-			width: 380px;
-	}
+  .left {
+    height: 600px;
+    width: 420px;
+  }
 
-	#id,#pw{
-			display: block;
-			margin:0 auto;
-			
-	}
+  .left img {
+    height: 590px;
+    width: 380px;
+  }
 
-	.rightbox1 img{
-			display: relative;
-			top:10px;
-			height: 100px;
-			width: 200px;
-	}
+  .right {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+    width: 380px;
+  }
 
-	.rightBox1{
-			display:flex;
-			flex-direction: column;
-			justify-content:space-around;
-			width:99.5%;
-			height: 100%;
-			background-color: rgb(255,255,255);
-			border:solid 1px rgb(219,219,219);
-			text-align: center;
-	}
+  #id,
+  #pw {
+    display: block;
+    margin: 0 auto;
+  }
 
-	.logo{
-			font-family: 'Lobster', cursive;
-	}
+  .rightbox1 img {
+    display: relative;
+    top: 10px;
+    height: 100px;
+    width: 200px;
+  }
 
-	input{
-			width:270px;
-			height:35px;
-			padding-left:5px;
-			background-color: rgb(250, 250, 250);
-			border:solid 1px rgb(219,219,219);
-			border-radius: 3px;
-			font-size:12px;
-			outline: none;
-	}
+  .rightBox1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 99.5%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(219, 219, 219);
+    text-align: center;
+  }
 
-	input.id{
-			margin-bottom:5px;
-	}
+  .logo {
+    font-family: "Lobster", cursive;
+  }
 
-	button{
-			margin:0 auto;
-			width:270px;
-			height:30px;    
-			border-radius: 5px;
-			border:none;
-			background-color: rgb(192,223,253);
-			color:white;
-			font-size: 14px;
-			outline:none;
-	}
+  input {
+    width: 270px;
+    height: 35px;
+    padding-left: 5px;
+    background-color: rgb(250, 250, 250);
+    border: solid 1px rgb(219, 219, 219);
+    border-radius: 3px;
+    font-size: 12px;
+    outline: none;
+  }
 
-	.loginText1{
-			color:rgb(179, 179, 179);
-	}
+  input.id {
+    margin-bottom: 5px;
+  }
 
-	.loginText3{
-			color:rgb(56, 81, 133);
-			font-size: 13px;
-	} 
+  button {
+    margin: 0 auto;
+    width: 270px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(192, 223, 253);
+    color: white;
+    font-size: 14px;
+    outline: none;
+  }
 
-	.orbox{
-			display:flex;
-			justify-content: space-between;
-			width:270px;
-			height: 20px;
-			margin:0 auto;
-	}
+  .loginText1 {
+    color: rgb(179, 179, 179);
+  }
 
-	.or1,.or2{
-			width: 100px;
-			height: 10px;
-			border-bottom:solid 1px  rgb(219,219,219);
-	}
+  .loginText3 {
+    color: rgb(56, 81, 133);
+    font-size: 13px;
+  }
 
-	.loginText2{
-			color:rgb(56, 81, 133);
-			font-weight: bold;
-	}
+  .orbox {
+    display: flex;
+    justify-content: space-between;
+    width: 270px;
+    height: 20px;
+    margin: 0 auto;
+  }
 
-	.rightBox2{
-			padding: 20px 97px;
-			margin: 10px 0px;
-			border:solid 1px rgb(219,219,219);
-			background-color: rgb(255,255,255);
-			font-size:15px;
-			font-weight: 400;
-	}
+  .or1,
+  .or2 {
+    width: 100px;
+    height: 10px;
+    border-bottom: solid 1px rgb(219, 219, 219);
+  }
 
-	.rightBox3 img{
-			width:270px;
-			height: 40px;
-	}
+  .loginText2 {
+    color: rgb(56, 81, 133);
+    font-weight: bold;
+  }
 
-	.join{
-			color:rgb(90, 178, 212);
-	}
+  .rightBox2 {
+    padding: 20px 97px;
+    margin: 10px 0px;
+    border: solid 1px rgb(219, 219, 219);
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 400;
+  }
 
-	.rightBox3{
-			margin:0 auto;
-			font-size: 14px;
-	}
+  .rightBox3 img {
+    width: 270px;
+    height: 40px;
+  }
 
-	.rightbox3_p{
-			margin-bottom: 15px;
-			text-align: center;
-	}
+  .join {
+    color: rgb(90, 178, 212);
+  }
 
-	footer{
-			height: 15vh;
-	}
+  .rightBox3 {
+    margin: 0 auto;
+    font-size: 14px;
+  }
 
-	ul{
-			list-style: none;
-	}
+  .rightbox3_p {
+    margin-bottom: 15px;
+    text-align: center;
+  }
 
-	li{
-			margin:0px 7px;
-			color:rgb(175,175,175);
-			font-size: 12px;
-	}
+  footer {
+    height: 15vh;
+  }
 
-	.line1{
-			display: flex;
-			flex-direction: row;
-			justify-content:center;
-			margin: 20px auto 5px auto;
-	}
+  ul {
+    list-style: none;
+  }
 
-	.line2{
-			display: flex;
-			justify-content:center;
-			margin: 7px auto 5px auto;
-	}
+  li {
+    margin: 0px 7px;
+    color: rgb(175, 175, 175);
+    font-size: 12px;
+  }
 
-	.line3{
-			display: flex; 
-			flex-direction: row;
-			justify-content:center;
-			margin: 15px auto 5px;
-	}
+  .line1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto 5px auto;
+  }
 
-	.facebook{
-			display: flex;
-			justify-content: center;
-	}
+  .line2 {
+    display: flex;
+    justify-content: center;
+    margin: 7px auto 5px auto;
+  }
 
-	#skycolor{
-		background-color:skyblue;
-	}
-	 
-	#bluecolor{
-		background-color:blue;
-	}
-	 
-		
+  .line3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px auto 5px;
+  }
+
+  .facebook {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skycolor {
+    background-color: skyblue;
+  }
+
+  .bluecolor {
+    background-color: blue;
+  }
 }
