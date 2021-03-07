@@ -14,8 +14,7 @@ class Main extends React.Component {
         },
       ],
     };
-  }
-
+  
   changeCom = e => {
     this.setState({ com: e.target.value });
   };
