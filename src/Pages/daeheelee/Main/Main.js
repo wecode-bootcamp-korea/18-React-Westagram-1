@@ -1,5 +1,6 @@
 import React from "react";
 import "./Main.scss";
+import Comment from "../Comment";
 
 class Main extends React.Component {
   constructor() {
@@ -14,7 +15,8 @@ class Main extends React.Component {
         },
       ],
     };
-  
+  }
+
   changeCom = e => {
     this.setState({ com: e.target.value });
   };
@@ -33,6 +35,7 @@ class Main extends React.Component {
   render() {
     return (
       <>
+        {console.log(<Comment />)}
         <div className="instamain">
           <nav>
             <div className="left">
@@ -113,13 +116,17 @@ class Main extends React.Component {
                       최고의 공간 WeWork에서 진행되는 세션
                     </span>
                   </li> */}
-                  {console.log("나오면 render")}
-                  {this.state.commnet.map(dat => {
+                  {/* {console.log("나오면 render")} */}
+                  {this.state.commnet.map(datgul => {
                     return (
-                      <li>
-                        <span className="name">{dat.userName}</span>
-                        <span>{dat.writeComment}</span>
-                      </li>
+                      // <li>
+                      //   <span className="name">{dat.userName}</span>
+                      //   <span>{dat.writeComment}</span>
+                      // </li>
+                      <Comment
+                        userName={datgul.userName}
+                        writeComment={datgul.writeComment}
+                      />
                     );
                   })}
                 </ul>
