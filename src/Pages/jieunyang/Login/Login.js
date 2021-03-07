@@ -4,11 +4,28 @@ import './Login.scss'
 import '../../../Styles/reset.scss'
 
 class Login extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      id: "",
+      password: "",
+    };
+  }
 
   goToMain = () => {
-    this.props.history.push('/main');
+    const { id, password } = this.state;
+    if (id.length > 0 && password.length > 0) {
+      this.props.history.push('/main');
+    }
+};
+
+handleIdValue = (e) => {
+  this.setState({ id : e.target.value })
 }
 
+handlePwValue = (e) => {
+  this.setState({ password : e.target.value })
+}
   render() {
     return (
   <div id="wrap_main">
@@ -16,8 +33,14 @@ class Login extends React.Component {
       <h1 className="westagram">Westagram</h1>
       <div className="mainlayout">
         <div className="inputs">
-          <input id ="userid" type="text" placeholder="아이디"></input>
-          <input id = "password" type="password" placeholder="비밀번호"></input>
+          <input id ="id" 
+                type="text" 
+                placeholder="아이디"
+                onChange={this.handleIdValue} />
+          <input id = "password" 
+                type="password" 
+                placeholder="비밀번호"
+                onChange={this.handlePwValue} />
         </div>
         <div className="btn_container">
           <button className="btn" onClick={this.goToMain}>로그인</button>
