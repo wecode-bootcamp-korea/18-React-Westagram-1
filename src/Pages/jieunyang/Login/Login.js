@@ -6,26 +6,37 @@ import '../../../Styles/reset.scss'
 class Login extends React.Component {
   constructor() {
     super();
+
     this.state = {
       id: "",
       password: "",
+      btnChangeId: "",
+      btnChangePw: ""
     };
   }
 
   goToMain = () => {
     const { id, password } = this.state;
-    if (id.length > 0 && password.length > 0) {
+    if (id.includes("@") && password.length >= 5) {
       this.props.history.push('/main');
+      return 
     }
 };
 
+changeHandlerBgColor = () => {
+  return this.state.btnChangeId && this.state.btnChangePw ? "trueColor" : "falseColor"
+}
+
 handleIdValue = (e) => {
   this.setState({ id : e.target.value })
+  this.setState({ btnChangeId : e.target.value.includes("@")});
 }
 
 handlePwValue = (e) => {
   this.setState({ password : e.target.value })
+  this.setState({ btnChangePw : e.target.value.length >= 5 ? true : false })
 }
+
   render() {
     return (
   <div id="wrap_main">
@@ -43,7 +54,8 @@ handlePwValue = (e) => {
                 onChange={this.handlePwValue} />
         </div>
         <div className="btn_container">
-          <button className="btn" onClick={this.goToMain}>로그인</button>
+          <button className={`${this.changeHandlerBgColor()} btn`}  
+          onClick={this.goToMain}>로그인</button>
         </div>
         <div className="divider">
           <div className="line_l"></div>
