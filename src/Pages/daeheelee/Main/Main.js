@@ -17,7 +17,7 @@ class Main extends React.Component {
       ],
     };
   }
-  num = 0;
+
   changeCom = e => {
     this.setState({ datas: e.target.value });
   };
@@ -35,7 +35,6 @@ class Main extends React.Component {
       ],
     });
     this.setState({ datas: "" });
-    this.num++;
   };
 
   removeText = e => {
