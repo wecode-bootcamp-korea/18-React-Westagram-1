@@ -6,36 +6,51 @@ class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      com: "",
-      commnet: [
+      datas: "",
+      commentArray: [
         {
           userName: "Wecodebootcamp",
           writeComment:
             "최고의 공간 WeWork에서 진행되는 세션",
+          date: Date.now(),
         },
       ],
     };
   }
-
+  num = 0;
   changeCom = e => {
-    this.setState({ com: e.target.value });
+    this.setState({ datas: e.target.value });
   };
 
   btnClick = e => {
     e.preventDefault();
     this.setState({
-      commnet: [
-        ...this.state.commnet,
-        { userName: "Wecodebootcamp", writeComment: this.state.com },
+      commentArray: [
+        ...this.state.commentArray,
+        {
+          userName: "Wecodebootcamp",
+          writeComment: this.state.datas,
+          date: Date.now(),
+        },
       ],
     });
-    this.setState({ com: "" });
+    this.setState({ datas: "" });
+    this.num++;
+  };
+
+  removeText = e => {
+    console.log(e);
+    const commentarray = [...this.state.commentArray];
+    const removecom = commentarray.filter(item => {
+      return item.date != e;
+    });
+    this.setState({ commentArray: removecom });
   };
 
   render() {
+    console.log(this.state.commentArray[0].date);
     return (
       <>
-        {console.log(<Comment />)}
         <div className="instamain">
           <nav>
             <div className="left">
@@ -110,22 +125,13 @@ class Main extends React.Component {
                   </div>
                 </article>
                 <ul className="comments">
-                  {/* <li className="comment">
-                    <span className="name">Wecodebootcamp</span>
-                    <span className="cominfo">
-                      최고의 공간 WeWork에서 진행되는 세션
-                    </span>
-                  </li> */}
-                  {/* {console.log("나오면 render")} */}
-                  {this.state.commnet.map(datgul => {
+                  {this.state.commentArray.map(commentIdex => {
                     return (
-                      // <li>
-                      //   <span className="name">{dat.userName}</span>
-                      //   <span>{dat.writeComment}</span>
-                      // </li>
                       <Comment
-                        userName={datgul.userName}
-                        writeComment={datgul.writeComment}
+                        date={commentIdex.date}
+                        userName={commentIdex.userName}
+                        writeComment={commentIdex.writeComment}
+                        removeText={this.removeText}
                       />
                     );
                   })}
@@ -140,7 +146,7 @@ class Main extends React.Component {
                       type="text"
                       placeholder="댓글 달기..."
                       onChange={this.changeCom}
-                      value={this.state.com}
+                      value={this.state.datas}
                     />
                   </div>
                   <button className="submitBtn" onClick={this.btnClick}>
