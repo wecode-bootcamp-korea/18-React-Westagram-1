@@ -45,8 +45,7 @@
         margin: 5px auto;
       }
 
-      #login {
-        background-color: #b2dffc;
+      button {
         color: white;
         width: 280px;
         height: 30px;
@@ -57,8 +56,12 @@
         margin: 10px auto;
       }
 
-      #login.active {
+      .changeColor {
         background-color: #0095f6;
+      }
+
+      .originColor {
+        background-color: #b2dffc;
       }
 
       .or {

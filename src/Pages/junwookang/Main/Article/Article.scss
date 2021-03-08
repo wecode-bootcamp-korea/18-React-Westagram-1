@@ -20,7 +20,6 @@ main {
 
     .story-text {
       width: 330px;
-      background-color: white;
 
       .story-follow {
         border-bottom: 1px solid rgba(219, 219, 219, 0.7);
@@ -95,15 +94,49 @@ main {
       .story-read {
         border-bottom: 1px solid rgba(219, 219, 219, 0.7);
         height: 380px;
-        display: flex;
 
-        .read-left {
-          width: 55px;
-        }
+        .comment-wrap {
+          width: 300px;
+          padding: 10px;
 
-        img {
-          border-radius: 50%;
-          width: 35px;
+          li {
+            color: #0095f6;
+            list-style: none;
+            font-size: 12px;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            margin: 3px 0;
+
+            img {
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              margin: 0;
+            }
+
+            .userName {
+              color: black;
+              font-size: 12px;
+              font-weight: bold;
+              margin: 0 5px;
+            }
+
+            .commentText {
+              width: 130px;
+              color: black;
+              font-size: 12px;
+              margin: 0;
+            }
+
+            button {
+              position: absolute;
+              border: none;
+              background-color: rgba(250, 250, 250, 0);
+              right: 10px;
+              top: 1px;
+            }
+          }
         }
       }
 
@@ -202,51 +235,6 @@ main {
             font-size: 16px;
             font-weight: bold;
           }
-        }
-
-        #enter.active {
-          color: #0095f6;
-        }
-
-        .comment-wrap {
-          width: 330px;
-          padding: 10px;
-          position: relative;
-        }
-
-        .comment-list {
-          width: 320px;
-          display: flex;
-          align-items: center;
-        }
-
-        .user-img {
-          width: 35px;
-          border-radius: 50%;
-          margin-right: 10px;
-        }
-
-        .user-name {
-          font-size: 13px;
-          font-weight: bold;
-          margin-right: 5px;
-        }
-
-        .comment-text {
-          font-size: 13px;
-        }
-
-        .delete-btn {
-          border: none;
-          background-color: white;
-          color: white;
-          position: absolute;
-          right: 20px;
-        }
-
-        .comment-wrap .fa-ellipsis-h {
-          position: absolute;
-          right: 30px;
         }
       }
     }

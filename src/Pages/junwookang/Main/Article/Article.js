@@ -3,9 +3,25 @@ import './Article.scss';
 import big from '../../../../Images/junwookang/instar-main.jpg';
 import wecode from '../../../../Images/junwookang/wecode.jpg';
 
-
 class Article extends Component {
+  constructor() {
+    super();
+    this.state = {
+      inputComment: '',
+      commentList: [], 
+    };
+  }
+
+  commentValue = (e) => {
+    this.setState({inputComment: e.target.value});
+  }
+
+  addComment = () => {
+    this.setState({commentList: this.state.commentList.concat([this.state.inputComment])})
+  }
+
   render() {
+    console.log(this.state.commentList);
     return (
       <main>
         <div class="main-story">
@@ -35,6 +51,9 @@ class Article extends Component {
             <div id="chatList" class="story-read">            
               <ul class="comment-wrap">
               {/* <!--댓글 기능--> */}
+                {this.state.commentList.map((comm, idx) => {
+                  return <li key={idx}><img src={wecode} /><span class="userName">Junwoo Kang</span><span class="commentText">{comm}</span><button>delete</button></li>                    
+                  })}
               </ul>                   
             </div>
             <div class="story-option">
@@ -59,10 +78,10 @@ class Article extends Component {
                 <i class="far fa-smile"></i>
               </div>
               <div class="comment-center">
-                <input id="myComment" type="text" placeholder="댓글 달기..." />
+                <input id="myComment" onChange={this.commentValue} type="text" placeholder="댓글 달기..." />
               </div>
               <div class="comment-right">
-                <button id="enter">게시</button>
+                <button id="enter" onClick={this.addComment}>게시</button>
               </div>            
             </div>
           </div>

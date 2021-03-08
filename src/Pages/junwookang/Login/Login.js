@@ -6,8 +6,49 @@ import apple from '../../../Images/junwookang/apple-download.png';
 import google from '../../../Images/junwookang/google-download.png';
 
 class Login extends Component {
+  constructor() {
+    super();
+    this.state={
+      btnColor: false,
+      id: '',
+      pw: '',      
+    };
+  }
+
+  // handleIdValue = (e) => {
+  //   this.setState({id: e.target.value});    
+  // }
+
+  // handlePwValue = (e) => {
+  //   this.setState({pw: e.target.value});    
+  // }
+  
+  handleInputValue = (e) => {
+    const {name,value} = e.target
+    this.setState({
+      [name] : value
+    },()=>{
+      if(this.state.id.includes("@") && this.state.pw.length >= 6) {
+        this.setState({btnColor: true});
+      } else {
+        this.setState({btnColor: false});
+      }    
+    })
+  }
+
+  // buttonChange = (e) => {
+  //   if(this.state.id.includes("@") && this.state.pw.length >= 6) {
+  //     console.log('1')
+  //     this.setState({btnColor: true});
+  //   } else {
+  //     console.log('2')
+  //     this.setState({btnColor: false});
+  //   }       
+  // };
+  
   goToMain = () => {
-    this.props.history.push('/main-junwoo');
+      if(this.state.id.length > 0 && this.state.pw.length >= 6)
+      this.props.history.push('/main-junwoo');
   };
 
   render() {
@@ -17,9 +58,9 @@ class Login extends Component {
         <header>
           <div class="main">
             <img src={logo} alt={"logo"}/>
-            <input id="log-id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-            <input id="log-pass" type="password" placeholder="비밀번호" />
-            <button id="login" onClick={this.goToMain}>로그인</button>
+            <input id="log-id" name="id" type="text" placeholder="전화번호, 사용자 이름 또는 이메일" onChange={this.handleInputValue} />
+            <input id="log-pass" name="pw" type="password" placeholder="비밀번호" onChange={this.handleInputValue} />
+            <button className={this.state.btnColor ? "changeColor" : "originColor"} onClick={this.goToMain}>로그인</button>
             <div class="or">
               <div class="line1"><hr /></div>
               <div class="box1"><p>또는</p></div>
