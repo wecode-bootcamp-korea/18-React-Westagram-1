@@ -5,7 +5,7 @@ import React from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
 
-class Login extends React.Component {
+class LoginSunghoon extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -49,7 +49,7 @@ class Login extends React.Component {
     render(){
      return (
         <>
-       
+        <div className="main__body">
             <div className="main__login">
             <div className="main__logo">
                 <h1>Instagram</h1>
@@ -67,10 +67,11 @@ class Login extends React.Component {
                 <span><a href="#">비밀번호를 잊으셨나요?</a></span>
             </div>
             </div>
+            </div>
      
         </>
         );
     }
 }
 
-export default Login;
+export default LoginSunghoon;

@@ -1,5 +1,7 @@
 import React from 'react';
 // import Comment from './comment'
+import imgA from '../../../Images/sunghoonbae/1.JPG'
+import imgB from '../../../Images/sunghoonbae/3.jpg'
 import './Main.scss';
 import './reset.scss';
 
@@ -8,13 +10,7 @@ class Main extends React.Component {
     super();
     this.state = {
       textarea: "",
-      comments: [{
-        id: "test",
-        comment: "adsfasdf",
-      },{
-        id: "test",
-        comment: "adsfasdf",
-      }]
+      comments: [{}],
   }
 }
 
@@ -26,16 +22,25 @@ class Main extends React.Component {
 
   commentHandlerBtn = () => {
     this.setState({
-       comments: this.state.comments.concat(this.state.textarea)
+       comments: this.state.comments.concat({id: 'tjdgns503', comment: this.state.textarea}),
+       textarea: "",
     })
   }
 
-    render(){
-     const { comments } = this.state
-     const commentsList = comments.map(
-       (comment, i) => ( <li key={i}>{comment}</li>)
-     )
+  enterPress = (e) => {
+    if ( e.key === "Enter" )
+    {
+      this.commentHandlerBtn();
+      e.preventDefault();
+    }
+  }
+  
 
+    render(){
+      const { comments } = this.state
+      const commentsList = comments.map(
+        (comments, i) => ( <li key={i}> {comments.id} {comments.comment} </li> )
+      )
      return (
         <>
             <nav className="nav">
@@ -83,7 +88,7 @@ class Main extends React.Component {
           <div className="feeds container_border bgcolor_white">
             <div className="feeds_header feeds_area">
               <div className="feeds_header_img mr-10">
-                <img src="/images/1.JPG" alt="사진" />
+                <img src={imgA} alt="사진" />
               </div>
               <div className="feeds_header_id mr-10">
                 hoon__503
@@ -93,7 +98,7 @@ class Main extends React.Component {
               </div>
             </div>
             <div className="feeds_body">
-              <img src="/images/2.jpg" alt="메인 사진" />
+              <img src={imgB} alt="메인 사진" />
             </div>
             <div className="feeds_area">
               <div className="feeds_icon flex">
@@ -108,7 +113,7 @@ class Main extends React.Component {
               <div className="feeds_container mt-10" id="feeds_container">
                 <div className="feeds_content">hoon__503</div>
                 <ul>
-                  <li>{commentsList}</li>
+                  <li> {commentsList} </li>
                 </ul>
                 {/* <Comment /> */}
                 {/* 댓글영역 */}
@@ -118,11 +123,12 @@ class Main extends React.Component {
             <div className="feeds_comment_input_area feeds_area" >
               <i className="far fa-smile fa-2x mr-10"></i>
               <textarea
+                onKeyPress={this.enterPress}
                 onChange={this.inputComment}
                 className="textarea"
                 type="text"
                 placeholder="댓글달기..."
-                id="comment_textarea"
+                value={this.state.textarea}
               ></textarea>
               <button onClick={this.commentHandlerBtn} className="comment_btn icon_cursor" id="comment_btn">게시</button>
             </div>
