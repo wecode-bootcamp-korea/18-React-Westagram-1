@@ -175,6 +175,12 @@ body {
   margin-left: 6px;
 }
 
+.textBox {
+  font-size: 13px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .time {
   font-size: 10px;
   margin-top: 20px;
@@ -208,10 +214,11 @@ body {
 }
 
 .enter {
+  background-color: white;
   color: lightskyblue;
   font-size: 15px;
   font-weight: bold;
-  margin-top: 25px;
+  border: none;
 }
 
 .side_right {

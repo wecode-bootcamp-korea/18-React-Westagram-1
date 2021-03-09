@@ -3,9 +3,34 @@ import './Main.scss'
 import '../../../Styles/reset.scss'
 
 class Main extends React.Component {
-  render() {
+    constructor() {
+        super();
+
+        this.state = {
+            value: "",
+            commentList: [
+                {
+                    name: "",
+                    text: "",
+                },
+            ],
+        };
+    }
+
+    inputComment = (e) => {
+        this.setState({value : e.target.value })
+    };
+
+    pressEnter =(e) => {
+        this.setState({
+            commentList: this.state.commentList.concat({name: 'yang_ji_eun ', text:this.state.value})
+        }
+        )};
+
+        render() {
+      //console.log(this.state.commentList);
     return (
-      <>
+        <>
     <nav className="header">
     <div className="header_container">
         <h1 className="logo">Westagram</h1>
@@ -54,14 +79,29 @@ class Main extends React.Component {
                     <div className="description">조명맛집들</div>
             </div>
                 </div>
+                <ul className="textBox">
+                    {this.state.commentList.map(el=> {
+                        return(
+                        <li>
+                            <span>{el.name}</span>
+                            <span>{el.text}</span>
+                        </li>
+            );
+            })}
+                </ul>
                 <div className="time">5시간 전</div>
             </section>
             <section className="section_comment">
                 <div className="comment_box">
                     <i class="far fa-smile"></i>
-                    <input className="input_comment" type="text" placeholder="댓글 달기..." />
+                    <input className="input_comment" 
+                    type="text" 
+                    placeholder="댓글 달기..."
+                    onChange={this.inputComment}
+                    value={this.state.value}
+                    />
                 </div>
-                <div className="enter">게시</div>
+                <button className="enter" onClick={this.pressEnter}>게시</button>
             </section>
         </div>
         <section className="wrap_sideright">
