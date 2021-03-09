@@ -28,7 +28,6 @@ class Main extends React.Component {
         )};
 
         render() {
-      //console.log(this.state.commentList);
     return (
         <>
     <nav className="header">
@@ -79,13 +78,15 @@ class Main extends React.Component {
                     <div className="description">조명맛집들</div>
             </div>
                 </div>
-                <ul className="textBox">
+                <ul className="textBox">{
+                }
                     {this.state.commentList.map(el=> {
                         return(
                         <li>
                             <span>{el.name}</span>
                             <span>{el.text}</span>
                         </li>
+                
             );
             })}
                 </ul>
