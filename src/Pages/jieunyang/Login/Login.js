@@ -14,26 +14,26 @@ class Login extends React.Component {
       btnChangePw: ""
     };
   }
-
+  
   goToMain = () => {
     const { id, password } = this.state;
     if (id.includes("@") && password.length >= 5) {
       this.props.history.push('/main');
+
     }
 };
-//
+
 changeHandlerBgColor = () => {
   return this.state.btnChangeId && this.state.btnChangePw ? "trueColor" : "falseColor"
+
 }
 
 handleIdValue = (e) => {
-  this.setState({ id : e.target.value })
-  this.setState({ btnChangeId : e.target.value.includes("@")});
+  this.setState({ id : e.target.value, btnChangeId : e.target.value.includes("@")})
 }
 
 handlePwValue = (e) => {
-  this.setState({ password : e.target.value })
-  this.setState({ btnChangePw : e.target.value.length >= 5 ? true : false })
+  this.setState({ password : e.target.value, btnChangePw : e.target.value.length >= 5 })
 }
 
   render() {
@@ -77,7 +77,7 @@ handlePwValue = (e) => {
     </main>
     <script type="text/javascript" src="login.js"></script>
     </div>
-    )
+    );
   }
 }
 

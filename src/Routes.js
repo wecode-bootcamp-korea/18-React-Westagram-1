@@ -20,7 +20,6 @@ import MainMihyun from './Pages/mihyungim/Main/Main';
 import LoginSunghoon from './Pages/sunghoonbae/Login/Login';
 import MainSunghoon from './Pages/sunghoonbae/Main/Main';
 
-
 class Routes extends React.Component {
   render() {
     return (
