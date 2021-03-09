@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 @import "./reset.scss";
 
 * {
+=======
+@import "./reset.css";
+
+  * {
+>>>>>>> 77ade7e78229994c9f13499ce8c7ba0e52f845bb
   box-sizing: border-box;
 }
 
@@ -69,7 +75,11 @@ body {
   max-width: 975px;
   width: 100%;
   display: flex;
+<<<<<<< HEAD
   margin-top: 80px;
+=======
+  margin-top: 30px;
+>>>>>>> 77ade7e78229994c9f13499ce8c7ba0e52f845bb
 }
 
 .main_section_container_box {
