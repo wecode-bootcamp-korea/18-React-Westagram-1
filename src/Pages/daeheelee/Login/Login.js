@@ -1,14 +1,11 @@
 import React from "react";
-import "./Login.scss";
-// import { Link } from 'react-router-dom';
+import "../../../Styles/Login.scss";
 import { withRouter } from "react-router-dom";
-// import instaleftimg from '.../Images/daeheelee/insta.png';
 
 class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      //변경이 가능한 정보
       idname: "",
       pwname: "",
     };
