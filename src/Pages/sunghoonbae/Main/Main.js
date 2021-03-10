@@ -43,20 +43,20 @@ class Main extends React.Component {
     })
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET'
-    })
-      .then(res => res.json())
-      .then(data =>  {
-        this.setState({
-          commentInfo: data,
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/data/commentData.json', {
+  //     method: 'GET'
+  //   })
+  //     .then(res => res.json())
+  //     .then(data =>  {
+  //       this.setState({
+  //         commentInfo: data,
+  //       });
+  //     });
+  // }
 
     render(){
-       const { commentInfo } = this.state
+       //const { commentInfo } = this.state
       //  const commentList = commentInfo.map(
       //   (comment, i) => 
       //   ( <li key={i}> {comment.id} {comment.comment} </li> )
@@ -133,8 +133,9 @@ class Main extends React.Component {
               <div className="feeds_container mt-10" id="feeds_container">
                 <div className="feeds_content">hoon__503</div>
                 <ul>
+                  <CommentInfo commentInfo={this.state.commentInfo}/>
                     {/* {commentList} */}
-                  {commentInfo.map(comment => {
+                  {/* {commentInfo.map(comment => {
                     return (
                       <CommentInfo 
                         key={comment.id}
@@ -143,7 +144,7 @@ class Main extends React.Component {
                         //commentInput={comment.comment}
                       />
                     )
-                  })}
+                  })} */}
                 </ul>
               </div>
               <div className="feeds_time mt-10">3시간</div>
