@@ -1,7 +1,8 @@
 import React from 'react';
 // import Comment from './comment'
-import imgA from '../../../Images/sunghoonbae/1.JPG'
-import imgB from '../../../Images/sunghoonbae/3.jpg'
+import CommentInfo from './comment';
+import imgA from '../../../Images/sunghoonbae/1.JPG';
+import imgB from '../../../Images/sunghoonbae/3.jpg';
 import './Main.scss';
 import './reset.scss';
 
@@ -10,20 +11,13 @@ class Main extends React.Component {
     super();
     this.state = {
       textarea: "",
-      comments: [{}],
+      commentInfo: [],
   }
 }
 
   inputComment = (e) => {
     this.setState({
       [e.target.className]: e.target.value
-    })
-  }
-
-  commentHandlerBtn = () => {
-    this.setState({
-       comments: this.state.comments.concat({id: 'tjdgns503', comment: this.state.textarea}),
-       textarea: "",
     })
   }
 
@@ -34,13 +28,39 @@ class Main extends React.Component {
       e.preventDefault();
     }
   }
-  
+
+  commentHandlerBtn = () => {
+    const comments = {
+        id: '',
+        userName: 'tjdgns503',
+        content: this.state.textarea,
+        isLiked: false,
+    }
+
+    this.setState({
+       commentInfo: this.state.commentInfo.concat(comments),
+       textarea: "",
+    })
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data =>  {
+        this.setState({
+          commentInfo: data,
+        });
+      });
+  }
 
     render(){
-      const { comments } = this.state
-      const commentsList = comments.map(
-        (comments, i) => ( <li key={i}> {comments.id} {comments.comment} </li> )
-      )
+       const { commentInfo } = this.state
+      //  const commentList = commentInfo.map(
+      //   (comment, i) => 
+      //   ( <li key={i}> {comment.id} {comment.comment} </li> )
+      //  )
      return (
         <>
             <nav className="nav">
@@ -113,10 +133,18 @@ class Main extends React.Component {
               <div className="feeds_container mt-10" id="feeds_container">
                 <div className="feeds_content">hoon__503</div>
                 <ul>
-                  <li> {commentsList} </li>
+                    {/* {commentList} */}
+                  {commentInfo.map(comment => {
+                    return (
+                      <CommentInfo 
+                        key={comment.id}
+                        name={comment.userName}
+                        comment={comment.content}
+                        //commentInput={comment.comment}
+                      />
+                    )
+                  })}
                 </ul>
-                {/* <Comment /> */}
-                {/* 댓글영역 */}
               </div>
               <div className="feeds_time mt-10">3시간</div>
             </div>

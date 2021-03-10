@@ -3,7 +3,6 @@
 //import './App.css';
 import React from 'react';
 import './Login.scss';
-import { Link } from 'react-router-dom';
 
 class LoginSunghoon extends React.Component {
     constructor(){
@@ -44,6 +43,20 @@ class LoginSunghoon extends React.Component {
             }
          })      
      }
+
+     goMain = () => {
+        fetch('http://10.58.1.71:8000/user/signin', {
+            method: 'POST',
+            body: JSON.stringify({
+                email: this.state.id,
+                password: this.state.pw
+            })
+          })
+            .then(res => res.json())
+            .then(result => alert(result.message))
+        
+            //this.props.history.push("/main-sunghoon")
+     }
      
 
     render(){
@@ -61,7 +74,7 @@ class LoginSunghoon extends React.Component {
                 placeholder="전화번호, 사용자 이름 또는 이메일"
              />
                 <input onChange={this.loginInputValue} className="pw" type="password" placeholder="비밀번호" />
-                <button className={`login__btn ${this.state.loginBtnColor}`}><Link to = "/main" className="main_link">로그인</Link></button>
+                <button onClick={this.goMain} className={`login__btn ${this.state.loginBtnColor}`}>로그인</button>
             </div>
             <div className="help__password">
                 <span><a href="#">비밀번호를 잊으셨나요?</a></span>
