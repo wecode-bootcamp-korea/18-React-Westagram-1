@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../Main/Main.scss';
 
 class MainComponent extends Component {
     constructor() {
@@ -14,6 +13,18 @@ class MainComponent extends Component {
             },
         ],
     };
+}
+
+componentDidMount() {
+    fetch('http://localhost:3000/data/commentDate.json', {
+        method: 'GET'
+    })
+    .then(res => res.json())
+    .then(data => {
+        this.setState({
+            value: "", commentList: data,
+        });
+    });
 }
 
 inputComment = (e) => {
@@ -45,11 +56,11 @@ pressEnter =(e) => {
         </section>
         <section className="section_footer">
             <div className="icons2">
-                <i class="fas fa-grin-hearts" onclick="change_color()"></i>
-                <i class="far fa-comment-dots"></i>
-                <i class="far fa-paper-plane"></i>
+                <i className="fas fa-grin-hearts"></i>
+                <i className="far fa-comment-dots"></i>
+                <i className="far fa-paper-plane"></i>
             </div>
-            <i class="far fa-bookmark"></i>
+            <i className="far fa-bookmark"></i>
         </section>
         <section className="section_input">
             <div className="like_number">좋아요 20,549개</div>
@@ -60,12 +71,12 @@ pressEnter =(e) => {
         </div>
             </div>
             <ul className="textBox">
-            {this.state.commentList.map(el=> {
-                return(
-                <li>
+            {this.state.commentList.map((el, key) => {
+                return (
+                <li key={key}>
                     <span>{el.name}</span>
                     <span>{el.text}</span>
-                </li>               
+                </li>    
         );
         })}
             </ul>
@@ -73,7 +84,7 @@ pressEnter =(e) => {
         </section>
         <section className="section_comment">
             <div className="comment_box">
-                <i class="far fa-smile"></i>
+                <i className="far fa-smile"></i>
                 <input className="input_comment" 
                 type="text" 
                 placeholder="댓글 달기..."

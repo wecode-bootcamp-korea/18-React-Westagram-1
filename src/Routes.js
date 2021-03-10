@@ -9,6 +9,7 @@ import LoginDaehee from './Pages/daeheelee/Login/Login';
 import MainDaehee from './Pages/daeheelee/Main/Main';
 
 import Login from './Pages/jieunyang/Login/Login';
+import Signup from './Pages/jieunyang/Login/Signup';
 import Main from './Pages/jieunyang/Main/Main';
 
 import LoginJunwoo from './Pages/junwookang/Login/Login';
@@ -29,6 +30,7 @@ class Routes extends React.Component {
           <Route exact path="/main-daehee" component={MainDaehee} />
 
 					<Route exact path="/" component={Login} />
+          <Route exact path="/signup" component={Signup} />
           <Route exact path="/main" component={Main} />
 
 					<Route exact path="/login-sunghoon" component={LoginSunghoon} />
