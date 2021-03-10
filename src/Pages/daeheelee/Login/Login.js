@@ -11,6 +11,22 @@ class Login extends React.Component {
     };
   }
 
+  signIn = () => {
+    fetch("http://10.58.4.128:8000/user/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.idname,
+        password: this.state.pwname, //id,password는 백엔드랑 약속 한 부분
+        username: "asdasdasd",
+      }),
+    })
+      .then(res => res.json())
+      .then(res => console.log(res))
+      .then(res => {
+        this.props.history.push("/main-daehee");
+      });
+  };
+
   btnEvent = () => {
     const { idname, pwname } = this.state;
     if (!idname.includes("@") && pwname.length < 5) {
@@ -19,8 +35,8 @@ class Login extends React.Component {
     }
     if (!idname.includes("@")) alert("아이디는 이메일 형태로 작성해주세요");
     if (pwname.length < 5) alert("비밀번호는 5자리 이상 작성해주세요");
-    if (idname.includes("@") && pwname.length >= 5)
-      this.props.history.push("/main-daehee");
+    if (idname.includes("@") && pwname.length >= 5) this.signIn();
+    // this.props.history.push("/main-daehee");
   };
 
   idhandleIdInput = e => {

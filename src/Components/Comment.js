@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class Comment extends Component {
   render() {
     const { writeComment, userName, date } = this.props;
-    console.log(this.props);
     return (
       <li>
         <span className="name">{userName}</span>
