@@ -77,9 +77,7 @@ class Feeds extends Component {
                   <img src={wecodes} alt="wecode" />
                 </div>
                 <div className="header2">
-                  <p className="header2MainName" style={{ fontWeight: 800 }}>
-                    wecode_bootcamp
-                  </p>
+                  <p className="header2MainName">wecode_bootcamp</p>
                   <p>WeCode</p>
                 </div>
               </div>
@@ -104,7 +102,7 @@ class Feeds extends Component {
                 </div>
               </div>
               <div className="like">
-                <p style={{ fontWeight: 800 }}>좋아요 10개</p>
+                <p>좋아요 10개</p>
               </div>
               <div className="text">
                 <span className="name">wecode_bootcamp</span>

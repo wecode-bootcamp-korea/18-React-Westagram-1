@@ -1,8 +1,8 @@
-import "./Nav.scss";
 import React, { Component } from "react";
 import explore from "../../../../Images/daeheelee/explore.png";
 import heart from "../../../../Images/daeheelee/heart.png";
 import profile from "../../../../Images/daeheelee/profile.png";
+import "./Nav.scss";
 
 class Nav extends Component {
   render() {

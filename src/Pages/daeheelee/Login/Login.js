@@ -1,8 +1,8 @@
 import React from "react";
-import "./Login.scss";
 import { withRouter } from "react-router-dom";
 import instaLoginimg from "../../../Images/daeheelee/insta.png";
 import appDown from "../../../Images/daeheelee/down.png";
+import "./Login.scss";
 
 class Login extends React.Component {
   constructor() {
@@ -12,6 +12,8 @@ class Login extends React.Component {
       pwname: "",
       footerLineOne: [],
       footerLineTwo: [],
+      email: "",
+      password: "",
     };
   }
 
@@ -31,23 +33,20 @@ class Login extends React.Component {
   };
 
   btnEvent = () => {
-    const { idname, pwname } = this.state;
-    if (!idname.includes("@") && pwname.length < 5) {
+    const { email, password } = this.state;
+    if (!email.includes("@") && password.length < 5) {
       alert("다시 입력해주세요");
       return;
     }
-    if (!idname.includes("@")) alert("아이디는 이메일 형태로 작성해주세요");
-    if (pwname.length < 5) alert("비밀번호는 5자리 이상 작성해주세요");
-    if (idname.includes("@") && pwname.length >= 5) this.signIn();
-    // this.props.history.push("/main-daehee");
+    if (!email.includes("@")) alert("아이디는 이메일 형태로 작성해주세요");
+    if (password.length < 5) alert("비밀번호는 5자리 이상 작성해주세요");
+    if (email.includes("@") && password.length >= 5) this.signIn();
   };
 
   idhandleIdInput = e => {
-    this.setState({ idname: e.target.value });
-  };
-
-  pwhandleIdInput = e => {
-    this.setState({ pwname: e.target.value });
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
   };
 
   handleKeyPress = e => {
@@ -75,8 +74,8 @@ class Login extends React.Component {
   }
 
   render() {
-    const { idname, pwname } = this.state;
-    const compareValue = idname !== "" && pwname !== "";
+    const { email, password } = this.state;
+    const compareValue = email !== "" && password !== "";
     return (
       <div className="loginBody">
         <div className="centerBody">
@@ -86,25 +85,25 @@ class Login extends React.Component {
             </div>
             <div className="right">
               <div className="rightBox1">
-                <span className="logo" style={{ fontSize: 48 }}>
-                  Westagram
-                </span>
+                <span className="logo">Westagram</span>
                 <form className="inputs">
                   <input
                     className="id"
+                    name="email"
                     onChange={this.idhandleIdInput}
                     onKeyPress={this.handleKeyPress}
                     type="text"
                     placeholder="전화번호, 사용자 이름 또는 이메일"
-                    value={idname}
+                    value={email}
                   />
                   <input
                     className="pw"
-                    onChange={this.pwhandleIdInput}
+                    name="password"
+                    onChange={this.idhandleIdInput}
                     onKeyPress={this.handleKeyPress}
                     type="password"
                     placeholder="비밀번호"
-                    value={pwname}
+                    value={password}
                   />
                 </form>
                 <button
