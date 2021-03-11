@@ -1,6 +1,8 @@
-import "../Styles/Nav.scss";
-
+import "./Nav.scss";
 import React, { Component } from "react";
+import explore from "../../../../Images/daeheelee/explore.png";
+import heart from "../../../../Images/daeheelee/heart.png";
+import profile from "../../../../Images/daeheelee/profile.png";
 
 class Nav extends Component {
   render() {
@@ -20,9 +22,9 @@ class Nav extends Component {
           />
         </div>
         <div className="right">
-          <img className="rightimg" src="explore.png" alt="explore" />
-          <img className="rightimg" src="heart.png" alt="heart" />
-          <img className="rightimg" src="profile.png" alt="profile" />
+          <img className="rightimg" src={explore} alt="explore" />
+          <img className="rightimg" src={heart} alt="heart" />
+          <img className="rightimg" src={profile} alt="profile" />
         </div>
       </nav>
     );

@@ -1,14 +1,32 @@
 import React, { Component } from "react";
 import RightUserinfo from "./RightUserinfo";
+import wecodeUser from "../../../../Images/daeheelee/wecode.png";
 
 export class MainRight extends Component {
+  constructor() {
+    super();
+    this.state = {
+      mainFooter: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/Mainfooterlist.json")
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          mainFooter: res,
+        });
+      });
+  }
+
   render() {
     return (
       <>
         <aside className="mainRight">
           <div className="rightProfile">
             <div className="rightImg">
-              <img src="wecode.png" alt="wecode" />
+              <img src={wecodeUser} alt="wecode" />
             </div>
             <div className="nameProfile">
               <p className="mainName">Wecode_bootcamp</p>
@@ -30,19 +48,14 @@ export class MainRight extends Component {
           </div>
           <footer className="list">
             <ul className="footer1">
-              <li>소개ㆍ</li>
-              <li>도움말ㆍ</li>
-              <li>홍보 센터ㆍ</li>
-              <li>APIㆍ</li>
-              <li>채용 정보ㆍ</li>
-              <li>개인정보처리방침ㆍ</li>
+              {this.state.mainFooter.map((item, index) => {
+                if (index < 6) return <li>{item.Contents}</li>;
+              })}
             </ul>
             <ul className="footer2">
-              <li>약관ㆍ</li>
-              <li>위치ㆍ</li>
-              <li>인기 계정ㆍ</li>
-              <li>해시태그ㆍ</li>
-              <li>언어</li>
+              {this.state.mainFooter.map((item, index) => {
+                if (index > 5) return <li>{item.Contents}</li>;
+              })}
             </ul>
             <p>© 2021 INSTAGRAM FROM FACEBOOK</p>
           </footer>

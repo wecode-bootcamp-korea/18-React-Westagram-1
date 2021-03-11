@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Comment from "./Comment";
+import wecodeMain from "../../../../Images/daeheelee/wecodemain.png";
+import wecodes from "../../../../Images/daeheelee/wecode.png";
+import wecodeStory from "../../../../Images/daeheelee/wecodestory1.png";
 
 class Feeds extends Component {
   constructor() {
@@ -14,7 +17,18 @@ class Feeds extends Component {
           date: Date.now(),
         },
       ],
+      commentData: [],
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/data/CommentList.json")
+      .then(res => res.json()) //응답을 json형태로 파싱한다.
+      .then(res => {
+        this.setState({
+          commentData: res.data,
+        });
+      });
   }
 
   changeCom = e => {
@@ -38,10 +52,10 @@ class Feeds extends Component {
 
   removeText = e => {
     const commentarray = [...this.state.commentArray];
-    const removecom = commentarray.filter(item => {
+    const deleteOneComment = commentarray.filter(item => {
       return item.date != e;
     });
-    this.setState({ commentArray: removecom });
+    this.setState({ commentArray: deleteOneComment });
   };
 
   render() {
@@ -50,7 +64,7 @@ class Feeds extends Component {
         <div className="feeds">
           <div className="story">
             <div className="wecodeStory1">
-              <img src="wecodestory1.png" alt="wecodestory1" />
+              <img src={wecodeStory} alt="wecodestory1" />
               <div className="wecodeStory1_name">
                 <p>Wework</p>
               </div>
@@ -60,10 +74,12 @@ class Feeds extends Component {
             <header className="header">
               <div className="flex">
                 <div className="header1">
-                  <img src="wecode.png" alt="wecode" />
+                  <img src={wecodes} alt="wecode" />
                 </div>
                 <div className="header2">
-                  <p style={{ fontWeight: 800 }}>wecode_bootcamp</p>
+                  <p className="header2MainName" style={{ fontWeight: 800 }}>
+                    wecode_bootcamp
+                  </p>
                   <p>WeCode</p>
                 </div>
               </div>
@@ -73,12 +89,12 @@ class Feeds extends Component {
             </header>
             <article>
               <div className="imageSection">
-                <img src="wecodemain.png" alt="wecodemain" />
+                <img src={wecodeMain} alt="wecodemain" />
               </div>
               <div className="iconline">
                 <div className="iconBox">
                   <a className="heartIcon">
-                    <i className="far fa-heart fa-2x" />{" "}
+                    <i className="far fa-heart fa-2x" />
                   </a>
                   <i className="far fa-comment fa-2x" />
                   <i className="far fa-paper-plane fa-2x" />
@@ -94,11 +110,22 @@ class Feeds extends Component {
                 <span className="name">wecode_bootcamp</span>
                 <span className="info">
                   일 잘하는 직장인을 위한 👩🏻‍🔬👨🏻‍✈️👩🏻‍🏫👮🏻‍♀️👨🏻‍💼 wecode
-                  social club 2기가 시작되었습니다.{" "}
+                  social club 2기가 시작되었습니다.
                 </span>
               </div>
             </article>
             <ul className="comments">
+              {this.state.commentData.map(pr => {
+                return (
+                  <ul>
+                    <span className="name">
+                      <b>{pr.User}</b>
+                    </span>
+                    <span>{pr.Content}</span>
+                  </ul>
+                );
+              })}
+
               {this.state.commentArray.map(commentIdex => {
                 return (
                   <Comment
@@ -117,6 +144,7 @@ class Feeds extends Component {
               <div className="post">
                 <input
                   className="inputBox"
+                  name="commentOne"
                   type="text"
                   placeholder="댓글 달기..."
                   onChange={this.changeCom}

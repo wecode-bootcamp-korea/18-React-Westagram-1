@@ -8,7 +8,7 @@ class Comment extends Component {
         <span className="name">{userName}</span>
         <span>{writeComment}</span>
         <span
-          className="textremove"
+          className="textRemove"
           onClick={() => this.props.removeText(date)}
         >
           <i className="fas fa-ellipsis-h"></i>
