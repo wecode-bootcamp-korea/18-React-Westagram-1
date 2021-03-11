@@ -15,11 +15,7 @@ class Nav extends Component {
           <span className="logo">instagram</span>
         </div>
         <div className="center">
-          <input
-            className="search"
-            type="text"
-            placeholder="                검색"
-          />
+          <input className="search" type="text" placeholder="검색" />
         </div>
         <div className="right">
           <img className="rightimg" src={explore} alt="explore" />

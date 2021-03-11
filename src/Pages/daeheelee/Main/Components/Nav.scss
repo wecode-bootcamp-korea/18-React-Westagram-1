@@ -36,12 +36,15 @@ nav {
       top: 2.2vh;
       height: 30px;
       width: 200px;
-      padding-left: 3%;
+      padding: 0 3%;
       margin: 0px 180px;
       border: solid 1px rgb(219, 219, 219);
       background-color: rgb(250, 250, 250);
       outline: none;
       font-size: 16px;
+    }
+    input::placeholder {
+      text-align: center;
     }
   }
 

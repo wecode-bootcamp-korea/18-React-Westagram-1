@@ -8,8 +8,6 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      idname: "",
-      pwname: "",
       footerLineOne: [],
       footerLineTwo: [],
       email: "",
@@ -21,8 +19,8 @@ class Login extends React.Component {
     fetch("http://10.58.4.128:8000/user/signup", {
       method: "POST",
       body: JSON.stringify({
-        email: this.state.idname,
-        password: this.state.pwname, //id,password는 백엔드랑 약속 한 부분
+        email: this.state.email,
+        password: this.state.password, //id,password는 백엔드랑 약속 한 부분
         username: "ldh",
       }),
     })

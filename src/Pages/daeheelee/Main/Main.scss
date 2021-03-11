@@ -1,8 +1,5 @@
 .instaMain {
-  .instamain {
-    display: flex;
-    justify-content: center;
-  }
+  background-color: rgb(250, 250, 250);
 
   .left img {
     position: relative;
@@ -17,10 +14,9 @@
   .main {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     height: 1100px;
     margin-top: 70px;
-    background-color: rgb(250, 250, 250);
   }
 
   .feeds {
@@ -28,11 +24,13 @@
   }
 
   .mainRight {
-    right: 10px;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
     width: 330px;
     height: 600px;
     margin-top: 20px;
-    margin-left: 1vh;
+    margin-left: 95vh;
   }
 
   .story {
@@ -306,5 +304,11 @@
     display: block;
     width: 70px;
     padding: 0px 1px 0px 5px;
+  }
+
+  @media screen and (max-width: 1070px) {
+    .mainRight {
+      display: none;
+    }
   }
 }

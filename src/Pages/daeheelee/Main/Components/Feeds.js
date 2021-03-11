@@ -53,109 +53,107 @@ class Feeds extends Component {
   removeText = e => {
     const commentarray = [...this.state.commentArray];
     const deleteOneComment = commentarray.filter(item => {
-      return item.date != e;
+      return item.date !== e;
     });
     this.setState({ commentArray: deleteOneComment });
   };
 
   render() {
     return (
-      <>
-        <div className="feeds">
-          <div className="story">
-            <div className="wecodeStory1">
-              <img src={wecodeStory} alt="wecodestory1" />
-              <div className="wecodeStory1_name">
-                <p>Wework</p>
-              </div>
+      <div className="feeds">
+        <div className="story">
+          <div className="wecodeStory1">
+            <img src={wecodeStory} alt="wecodestory1" />
+            <div className="wecodeStory1_name">
+              <p>Wework</p>
             </div>
           </div>
-          <section>
-            <header className="header">
-              <div className="flex">
-                <div className="header1">
-                  <img src={wecodes} alt="wecode" />
-                </div>
-                <div className="header2">
-                  <p className="header2MainName">wecode_bootcamp</p>
-                  <p>WeCode</p>
-                </div>
-              </div>
-              <div className="dotIcon">
-                <i className="fas fa-ellipsis-h" />
-              </div>
-            </header>
-            <article>
-              <div className="imageSection">
-                <img src={wecodeMain} alt="wecodemain" />
-              </div>
-              <div className="iconline">
-                <div className="iconBox">
-                  <a className="heartIcon">
-                    <i className="far fa-heart fa-2x" />
-                  </a>
-                  <i className="far fa-comment fa-2x" />
-                  <i className="far fa-paper-plane fa-2x" />
-                </div>
-                <div>
-                  <i className="far fa-bookmark fa-2x" />
-                </div>
-              </div>
-              <div className="like">
-                <p>좋아요 10개</p>
-              </div>
-              <div className="text">
-                <span className="name">wecode_bootcamp</span>
-                <span className="info">
-                  일 잘하는 직장인을 위한 👩🏻‍🔬👨🏻‍✈️👩🏻‍🏫👮🏻‍♀️👨🏻‍💼 wecode
-                  social club 2기가 시작되었습니다.
-                </span>
-              </div>
-            </article>
-            <ul className="comments">
-              {this.state.commentData.map(pr => {
-                return (
-                  <ul>
-                    <span className="name">
-                      <b>{pr.User}</b>
-                    </span>
-                    <span>{pr.Content}</span>
-                  </ul>
-                );
-              })}
-
-              {this.state.commentArray.map(commentIdex => {
-                return (
-                  <Comment
-                    date={commentIdex.date}
-                    userName={commentIdex.userName}
-                    writeComment={commentIdex.writeComment}
-                    removeText={this.removeText}
-                  />
-                );
-              })}
-            </ul>
-            <form className="inputComment">
-              <div className="smile">
-                <i className="far fa-smile fa-2x" />
-              </div>
-              <div className="post">
-                <input
-                  className="inputBox"
-                  name="commentOne"
-                  type="text"
-                  placeholder="댓글 달기..."
-                  onChange={this.changeCom}
-                  value={this.state.datas}
-                />
-              </div>
-              <button className="submitBtn" onClick={this.btnClick}>
-                게시
-              </button>
-            </form>
-          </section>
         </div>
-      </>
+        <section>
+          <header className="header">
+            <div className="flex">
+              <div className="header1">
+                <img src={wecodes} alt="wecode" />
+              </div>
+              <div className="header2">
+                <p className="header2MainName">wecode_bootcamp</p>
+                <p>WeCode</p>
+              </div>
+            </div>
+            <div className="dotIcon">
+              <i className="fas fa-ellipsis-h" />
+            </div>
+          </header>
+          <article>
+            <div className="imageSection">
+              <img src={wecodeMain} alt="wecodemain" />
+            </div>
+            <div className="iconline">
+              <div className="iconBox">
+                <a className="heartIcon">
+                  <i className="far fa-heart fa-2x" />
+                </a>
+                <i className="far fa-comment fa-2x" />
+                <i className="far fa-paper-plane fa-2x" />
+              </div>
+              <div>
+                <i className="far fa-bookmark fa-2x" />
+              </div>
+            </div>
+            <div className="like">
+              <p>좋아요 10개</p>
+            </div>
+            <div className="text">
+              <span className="name">wecode_bootcamp</span>
+              <span className="info">
+                일 잘하는 직장인을 위한 👩🏻‍🔬👨🏻‍✈️👩🏻‍🏫👮🏻‍♀️👨🏻‍💼 wecode
+                social club 2기가 시작되었습니다.
+              </span>
+            </div>
+          </article>
+          <ul className="comments">
+            {this.state.commentData.map(pr => {
+              return (
+                <ul>
+                  <span className="name">
+                    <b>{pr.User}</b>
+                  </span>
+                  <span>{pr.Content}</span>
+                </ul>
+              );
+            })}
+
+            {this.state.commentArray.map(commentIdex => {
+              return (
+                <Comment
+                  date={commentIdex.date}
+                  userName={commentIdex.userName}
+                  writeComment={commentIdex.writeComment}
+                  removeText={this.removeText}
+                />
+              );
+            })}
+          </ul>
+          <form className="inputComment">
+            <div className="smile">
+              <i className="far fa-smile fa-2x" />
+            </div>
+            <div className="post">
+              <input
+                className="inputBox"
+                name="commentOne"
+                type="text"
+                placeholder="댓글 달기..."
+                onChange={this.changeCom}
+                value={this.state.datas}
+              />
+            </div>
+            <button className="submitBtn" onClick={this.btnClick}>
+              게시
+            </button>
+          </form>
+        </section>
+      </div>
     );
   }
 }

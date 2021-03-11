@@ -198,4 +198,13 @@
   .bluecolor {
     background-color: blue;
   }
+  @media screen and (max-width: 785px) {
+    .left {
+      display: none;
+    }
+    .main {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
