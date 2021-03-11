@@ -55,11 +55,11 @@ class MainComponent extends Component {
           </section>
           <section className="section_footer">
             <div className="icons2">
-              <i className="fas fa-grin-hearts"></i>
-              <i className="far fa-comment-dots"></i>
-              <i className="far fa-paper-plane"></i>
+              <i className="fas fa-grin-hearts" />
+              <i className="far fa-comment-dots" />
+              <i className="far fa-paper-plane" />
             </div>
-            <i className="far fa-bookmark"></i>
+            <i className="far fa-bookmark" />
           </section>
           <section className="section_input">
             <div className="like_number">좋아요 20,549개</div>
@@ -83,7 +83,7 @@ class MainComponent extends Component {
           </section>
           <section className="section_comment">
             <div className="comment_box">
-              <i className="far fa-smile"></i>
+              <i className="far fa-smile" />
               <input
                 className="input_comment"
                 type="text"

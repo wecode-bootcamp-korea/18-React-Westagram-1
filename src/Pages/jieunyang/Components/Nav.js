@@ -11,13 +11,13 @@ class Nav extends Component {
           </h1>
           <div className="header_bar">
             <input className="search_bar" type="text" />
-            <i className="fas fa-search"></i>
+            <i className="fas fa-search" />
           </div>
           <div className="icons">
-            <i className="fas fa-home"></i>
-            <i className="far fa-comments"></i>
-            <i className="far fa-compass"></i>
-            <i className="far fa-heart"></i>
+            <i className="fas fa-home" />
+            <i className="far fa-comments" />
+            <i className="far fa-compass" />
+            <i className="far fa-heart" />
             <img
               className="profile_img"
               src="https://media.vlpt.us/images/poohv7/post/d60edb23-650d-4c2b-8880-b5b6aa66d320/my%20profile.jpg"

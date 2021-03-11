@@ -79,7 +79,6 @@ class Signup extends Component {
                 className={`${this.changeHandlerBgColor()} btn`}
                 onClick={this.gotoSign}
               >
-                {" "}
                 가입하기
               </button>
             </div>

@@ -55,9 +55,8 @@ class Login extends React.Component {
   };
 
   changeHandlerBgColor = () => {
-    return this.state.btnChangeId && this.state.btnChangePw
-      ? "trueColor"
-      : "falseColor";
+    const { btnChangeId, btnChangePw } = this.state;
+    return btnChangeId && btnChangePw ? "trueColor" : "falseColor";
   };
 
   render() {
@@ -95,7 +94,7 @@ class Login extends React.Component {
             </div>
             <div className="facebook">
               <button className="btn_fb">
-                <i className="fab fa-facebook-square"></i>
+                <i className="fab fa-facebook-square" />
                 <span className="fb_char">Facebook으로 로그인</span>
               </button>
             </div>
