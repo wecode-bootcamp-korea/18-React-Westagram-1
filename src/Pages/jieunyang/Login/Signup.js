@@ -35,17 +35,10 @@ class Signup extends Component {
     }
   };
 
-  handleIdValue = (e) => {
+  handleInputValue = (e) => {
+    const { id, value } = e.target;
     this.setState({
-      id: e.target.value,
-      btnChangeId: e.target.value.includes("@"),
-    });
-  };
-
-  handlePwValue = (e) => {
-    this.setState({
-      password: e.target.value,
-      btnChangePw: e.target.value.length >= 8,
+      [id]: value,
     });
   };
 
@@ -55,6 +48,9 @@ class Signup extends Component {
   };
 
   render() {
+    const { id, password } = this.state;
+    const changeHandlerBgColor = id.includes("@") && password.length >= 8;
+
     return (
       <div id="wrap_main">
         <main className="container">
@@ -64,19 +60,21 @@ class Signup extends Component {
               <input
                 id="id"
                 type="text"
-                placeholder="사용하실 아이디를 입력하세요"
-                onChange={this.handleIdValue}
+                placeholder="아이디를 이메일 형식에 맞게 입력하세요"
+                onChange={this.handleInputValue}
               />
               <input
                 id="password"
                 type="password"
-                placeholder="비밀번호를 입력하세요"
-                onChange={this.handlePwValue}
+                placeholder="8자리 이상의 비밀번호를 입력하세요"
+                onChange={this.handleInputValue}
               />
             </div>
             <div className="btn_container">
               <button
-                className={`${this.changeHandlerBgColor()} btn`}
+                className={`${
+                  changeHandlerBgColor ? "trueColor" : "falseColor"
+                } btn`}
                 onClick={this.gotoSign}
               >
                 가입하기

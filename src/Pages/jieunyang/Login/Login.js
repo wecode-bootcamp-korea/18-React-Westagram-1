@@ -40,26 +40,17 @@ class Login extends React.Component {
     }
   };
 
-  handleIdValue = (e) => {
+  handleInputValue = (e) => {
+    const { id, value } = e.target;
     this.setState({
-      id: e.target.value,
-      btnChangeId: e.target.value.includes("@"),
+      [id]: value,
     });
-  };
-
-  handlePwValue = (e) => {
-    this.setState({
-      password: e.target.value,
-      btnChangePw: e.target.value.length >= 8,
-    });
-  };
-
-  changeHandlerBgColor = () => {
-    const { btnChangeId, btnChangePw } = this.state;
-    return btnChangeId && btnChangePw ? "trueColor" : "falseColor";
   };
 
   render() {
+    const { id, password } = this.state;
+    const changeHandlerBgColor = id.includes("@") && password.length >= 8;
+
     return (
       <div id="wrap_main">
         <main className="container">
@@ -70,18 +61,20 @@ class Login extends React.Component {
                 id="id"
                 type="text"
                 placeholder="아이디"
-                onChange={this.handleIdValue}
+                onChange={this.handleInputValue}
               />
               <input
                 id="password"
                 type="password"
                 placeholder="비밀번호"
-                onChange={this.handlePwValue}
+                onChange={this.handleInputValue}
               />
             </div>
             <div className="btn_container">
               <button
-                className={`${this.changeHandlerBgColor()} btn`}
+                className={`${
+                  changeHandlerBgColor ? "trueColor" : "falseColor"
+                } btn`}
                 onClick={this.goToMain}
               >
                 로그인
