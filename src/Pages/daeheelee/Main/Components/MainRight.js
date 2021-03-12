@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RightUserinfo from "./RightUserinfo";
 import wecodeUser from "../../../../Images/daeheelee/wecode.png";
+import "./MainRight.scss";
 
 export class MainRight extends Component {
   constructor() {

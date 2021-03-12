@@ -18,9 +18,9 @@ class Nav extends Component {
           <input className="search" type="text" placeholder="검색" />
         </div>
         <div className="right">
-          <img className="rightimg" src={explore} alt="explore" />
-          <img className="rightimg" src={heart} alt="heart" />
-          <img className="rightimg" src={profile} alt="profile" />
+          <img className="rightImg" src={explore} alt="explore" />
+          <img className="rightImg" src={heart} alt="heart" />
+          <img className="rightImg" src={profile} alt="profile" />
         </div>
       </nav>
     );

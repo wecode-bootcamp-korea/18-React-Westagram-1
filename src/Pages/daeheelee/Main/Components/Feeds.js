@@ -12,8 +12,7 @@ class Feeds extends Component {
       commentArray: [
         {
           userName: "Wecodebootcamp",
-          writeComment:
-            "최고의 공간 WeWork에서 진행되는 세션",
+          writeComment: "Fighting~~",
           date: Date.now(),
         },
       ],
