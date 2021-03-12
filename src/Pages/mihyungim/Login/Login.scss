@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+.LoginComponent {
+  .input {
+    background-color: rgb(250, 250, 250);
+    padding: 10px;
+    border: 1px solid #efefef;
+    width: 80%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .body {
+    background: #fafafa;
+  }
+
+  .body__container {
+    background-color: rgb(250, 250, 250);
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    border: 1px solid rgb(219, 219, 219);
+    width: 350px;
+    margin: 50px auto;
+    text-align: center;
+    position: relative;
+    background: rgb(255, 255, 255);
+  }
+
+  .logoLogin {
+    font-family: "Lobster", cursive;
+    font-size: 45px;
+    color: #262626;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .logIn {
+    text-align: center;
+  }
+
+  .logInBtn {
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 10px 0;
+    background: rgb(178, 223, 252);
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    font-weight: 900;
+  }
+
+  .line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .line .lineGray {
+    background: rgb(219, 219, 219);
+    height: 1px;
+    width: 103px;
+  }
+
+  .line .or {
+    font-size: 13px;
+    color: #8e8e8e;
+    font-weight: 700;
+    margin: 0 10px;
+  }
+
+  .facebookLogin {
+    margin: 10px 0;
+  }
+
+  .facebookLogin .text {
+    color: rgb(56, 81, 133);
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  .notice {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,370 @@
+
+a {
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+}
+
+.mainComponent {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        background: white;
+        width: 100%;
+        border: 1px solid #dbdbdb;
+
+        .inner {
+            margin: 0 auto;
+            width: 980px;
+            padding: 10px 0;
+            box-sizing: border-box;
+            position: relative;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+
+            .search {
+                position: relative;
+
+                height: 50px;
+
+                input {
+                    background: #fafafa;
+                    border: 1px solid #dbdbdb;
+                    width: 199px;
+                    outline: none;
+                    padding: 5px 5px 5px 85px;
+                    font-size: 14px;
+                    box-sizing: border-box;
+                }
+
+                i {
+                    position: absolute;
+                    top: 9px;
+                    left: 70px;
+                    color: #b1b3b6;
+                }
+            }
+
+            nav {
+                svg {
+                    margin-right: 10px;
+                }
+
+                .img--container {
+                    border-radius: 50px;
+                    display: inline-block;
+                    overflow: hidden;
+                    width: 22px;
+                    height: 22px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        position: relative;
+        margin-top: 52px;
+        background: #fafafa;
+        /* background :rgb(250,250,250); */
+        height: 2000px;
+
+        .inner {
+            margin: 0 auto;
+            width: 980px;
+            padding: 40px 0;
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            height: 1000px;
+
+            .contents__all {
+                background: #fafafa;
+                width: 65%;
+                margin-right: 5%;
+
+                .contents__up {
+                    padding: 10px 0;
+                    margin-bottom: 30px;
+                    background: white;
+                    border: 1px solid #dbdbdb;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+
+                    .up__list {
+                        text-align: center;
+                        display: inline-block;
+                        padding: 0 10px;
+                        width: 60px;
+                        height: 80px;
+                        overflow: hidden;
+
+                        .up__img {
+                            border-radius: 50px;
+                            display: inline-block;
+                            overflow: hidden;
+                            width: 56px;
+                            height: 56px;
+                            border: 3px solid orange;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
+                        .up_text {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                /* <!-- 메인섹션 왼쪽 하단  --> */
+                .contents__down {
+                    border: 1px solid #dbdbdb;
+                    margin-bottom: 30px;
+                    background: white;
+                    border-radius: 4px;
+
+                    .list__inner {
+                        padding: 0 10px;
+                        margin-bottom: 10px;
+                        display: flex;
+                        align-items: center;
+                        font-size: 14px;
+
+                        .img--container {
+                            border-radius: 50px;
+                            display: inline-block;
+                            overflow: hidden;
+                            width: 32px;
+                            height: 32px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .picture {
+                        img {
+                            width: 100%;
+                        }
+                    }
+
+                    .symbol {
+                        padding: 0 10px;
+                        margin: 10px 0;
+
+                        i {
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .like {
+                        font-size: 14px;
+                        margin-bottom: 10px;
+                        padding: 0 10px;
+                    }
+
+                    .reply--list {
+                        .reply {
+                            padding: 0 10px;
+                            display: flex;
+                            font-size: 14px;
+                            margin-bottom: 10px;
+                            position: relative;
+                            .reply__name{
+                                margin-right:10px;
+                                font-weight: 800;
+                            }
+                            .fa-ellipsis-h {
+                                position: absolute;
+                                top: 0;
+                                right: 40px;
+                            }
+
+                            .fa-heart {
+                                position: absolute;
+                                top: 0;
+                                right: 20px;
+                                /* color:"black" */
+                            }
+                        }
+                    }
+
+                    .time {
+                        font-size: 10px;
+                        margin-bottom: 10px;
+                        padding: 10px 10px;
+                        border-bottom: 1px solid #dbdbdb;
+                    }
+
+                    .write {
+                        position: relative;
+
+                        i {
+                            position: absolute;
+                            top: 12px;
+                            left: 10px;
+                        }
+
+                        input {
+                            width: 100%;
+                            padding: 16px 40px;
+                            box-sizing: border-box;
+                            outline: none;
+                            border: none;
+                        }
+
+                        .write__send {
+                            position: absolute;
+                            top: 12px;
+                            right: 10px;
+                            font-size: 14px;
+                            font-weight: 800;
+                            color: #b2dffc;
+                            border:none;
+                            background:none;
+                        }
+                    }
+                }
+            }
+
+            /* 어사이드 컨텐츠  */
+            aside {
+                max-width: 293px;
+                position: fixed;
+                top: 100px;
+                left: calc(50% + 180px);
+
+                .aside_up {
+                    width: 293px;
+                    height: 56px;
+                    display: flex;
+                    margin-bottom: 20px;
+                    align-items: center;
+    
+                    .img--container {
+                        border-radius: 50px;
+                        display: inline-block;
+                        overflow: hidden;
+                        width: 56px;
+                        height: 56px;
+                        margin-right: 15px;
+                    }
+    
+                    .name {
+                        font-size: 14px;
+                        margin-right: 15px;
+    
+                        .desc {
+                            padding: 5px 0;
+                            color: rgba(var(--f52, 142, 142, 142), 1);
+                        }
+                    }
+    
+                    .transform {
+                        font-size: 12px;
+                        a {
+                            font-size: 12px;
+                            color: #0095f6;
+                        }
+                    }
+                }
+    
+                .aside_down {
+    
+                    .title {
+                        margin: 0 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 20px;
+        
+                        .title_left {
+                            color: #8e8e8e;
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+        
+                        .title_right {
+                            font-size: 12px;
+                            font-weight: 600;
+                        }
+                    }
+        
+                    .list {
+                        .list__inner {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 20px;
+        
+                            .img--container {
+                                border-radius: 50px;
+                                display: inline-block;
+                                overflow: hidden;
+                                width: 32px;
+                                height: 32px;
+                                margin-right: 10px;
+                            }
+        
+                            .name {
+                                margin-right: 70px;
+        
+                                .nickname {
+                                    font-size: 14px;
+                                    margin-bottom: 10px;
+                                }
+                                .desc {
+                                    color: #8e8e8e;
+                                    font-size: 12px;
+                                }
+                            }
+        
+                            .follow {
+                                a {
+                                    font-size: 12px;
+                                    font-weight: 600;
+                                    color: #0095f6;
+                                }
+                            }
+                        }
+                    }
+    
+                }
+    
+    
+                .aside_footer {
+                    font-size: 11px;
+                    color: #c7c7c7;
+    
+                    ul {
+                        margin-bottom: 20px;
+        
+                        li {
+                            list-style: disc;
+                            display: inline;
+                            line-height: 1.2;
+                        }
+                        .fa-hand-scissors {
+                            color: purple;
+                            font-size: 100px;
+                        }
+                    }
+                }
+            }
+
+
+
+            
+
+            
+
+            
+        }
+    }
+}
