@@ -1,0 +1,69 @@
+.mainRight {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  width: 330px;
+  height: 600px;
+  margin-top: 20px;
+  margin-left: 95vh;
+
+  .rightProfile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+
+    img {
+      border-radius: 40px;
+      width: 60px;
+      height: 60px;
+    }
+
+    .nameProfile {
+      margin-right: 60px;
+    }
+
+    .change p {
+      color: rgb(50, 159, 248);
+      font-size: 13px;
+    }
+  }
+
+  .commendtext {
+    display: flex;
+    justify-content: space-around;
+
+    .commendtext-right {
+      margin-left: 110px;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    .commendtext-left {
+      font-weight: 600;
+      color: gray;
+    }
+  }
+
+  .list {
+    margin: 30px 10px;
+
+    .footer1,
+    .footer2 {
+      display: flex;
+      margin-bottom: 5px;
+      color: rgb(199, 199, 199);
+      font-size: 11px;
+
+      li {
+        list-style: none;
+      }
+    }
+    p {
+      color: rgb(199, 199, 199);
+      font-size: 11px;
+    }
+  }
+}

@@ -1,0 +1,230 @@
+.instaMain {
+  background-color: rgb(250, 250, 250);
+
+  .left img {
+    position: relative;
+    top: 10px;
+    width: 120px;
+    height: 42px;
+    padding-left: 15px;
+    margin-left: 15px;
+    border-left: solid 2px rgb(141, 140, 140);
+  }
+
+  .main {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    height: 1100px;
+    margin-top: 70px;
+  }
+
+  .feeds {
+    width: 610px;
+
+    .story {
+      padding: 10px 20px;
+      width: 570px;
+      height: 80px;
+      margin: 20px 0px;
+      background-color: rgb(255, 255, 255);
+      border: solid 1px rgb(219, 219, 219);
+
+      .wecodeStory1 {
+        display: block;
+        width: 70px;
+        padding: 0px 1px 0px 5px;
+
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 40px;
+        }
+
+        p {
+          padding: 0 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  section {
+    width: 610px;
+    background-color: rgb(255, 255, 255);
+    border: solid 1px rgb(219, 219, 219);
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      height: 60px;
+
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 40px;
+      }
+
+      .flex {
+        margin: 6px;
+        margin-left: 10px;
+        display: flex;
+        justify-content: space-between;
+        width: 185px;
+
+        .header2 {
+          margin-top: 10px;
+
+          .header2MainName {
+            font-weight: 800;
+          }
+
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+      .dotIcon {
+        margin: auto 10px;
+        color: rgb(110, 110, 110);
+      }
+    }
+  }
+
+  .imageSection img {
+    width: 607.5px;
+    height: 565px;
+    border: solid 1px black;
+  }
+
+  .iconline {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    height: 35px;
+    margin-top: 0px;
+
+    .iconBox {
+      display: flex;
+      justify-content: space-between;
+      width: 150px;
+    }
+  }
+
+  .like p {
+    position: relative;
+    margin-left: 20px;
+    top: -10px;
+    font-weight: 800;
+  }
+
+  .text {
+    position: relative;
+    top: -5px;
+    margin: 0 20px;
+
+    .name {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  }
+
+  .comments {
+    position: relative;
+    top: -5px;
+    margin: 0 20px;
+  }
+
+  .textRemove {
+    position: absolute;
+    right: 30px;
+    position: absolute;
+    right: 30px;
+    border: none;
+    background-color: white;
+    color: rgb(219, 219, 219);
+    outline: none;
+  }
+
+  .textRemove:hover {
+    color: rgb(58, 58, 58);
+  }
+
+  .inputComment {
+    border-top: solid 1px rgb(230, 230, 230);
+    display: flex;
+    position: relative;
+    bottom: -2px;
+    height: 60px;
+
+    button {
+      width: 70px;
+      height: 55px;
+      border: none;
+      background-color: rgb(255, 255, 255);
+      color: rgb(191, 224, 253);
+      outline: none;
+    }
+
+    .smile {
+      padding: 15px;
+    }
+
+    .post {
+      width: 470px;
+
+      input {
+        width: 100%;
+        height: 60%;
+        margin-top: 10px;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .mainName {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .subname {
+    color: gray;
+    font-size: 15px;
+  }
+
+  .rightNum1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5px 0;
+
+    .num1Name {
+      margin-right: 70px;
+    }
+
+    .num1Img img {
+      height: 40px;
+      width: 40px;
+      margin-top: 3px;
+      border-radius: 40px;
+    }
+
+    .num1Subname {
+      color: gray;
+      font-size: 13px;
+    }
+
+    .follow {
+      color: rgb(0, 150, 246);
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 1070px) {
+    .mainRight {
+      display: none;
+    }
+  }
+}

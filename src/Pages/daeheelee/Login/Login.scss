@@ -1,0 +1,203 @@
+@import "../../../Styles/reset.scss";
+
+// @media screen and (max-width: 785px) {
+//   .left {
+//     display: none;
+//   }
+//   .right {
+//     display: flex;
+//     justify-content: center;
+//   }
+// }
+
+.loginBody {
+  margin-top: -15px;
+  background-color: rgb(250, 250, 250);
+
+  .centerBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+
+    .main {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      height: 600px;
+      width: 780px;
+
+      .left {
+        height: 600px;
+        width: 420px;
+
+        img {
+          height: 590px;
+          width: 380px;
+        }
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0px;
+    width: 380px;
+
+    .rightBox1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 99.5%;
+      height: 100%;
+      background-color: rgb(255, 255, 255);
+      border: solid 1px rgb(219, 219, 219);
+      text-align: center;
+
+      .logo {
+        font-size: 48px;
+        font-family: "Lobster", cursive;
+      }
+
+      input {
+        width: 270px;
+        height: 35px;
+        padding-left: 5px;
+        background-color: rgb(250, 250, 250);
+        border: solid 1px rgb(219, 219, 219);
+        border-radius: 3px;
+        font-size: 12px;
+        outline: none;
+      }
+
+      .id {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  button {
+    margin: 0 auto;
+    width: 270px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(192, 223, 253);
+    color: white;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .loginText3 {
+    color: rgb(56, 81, 133);
+    font-size: 13px;
+  }
+
+  .orbox {
+    display: flex;
+    justify-content: space-between;
+    width: 270px;
+    height: 20px;
+    margin: 0 auto;
+
+    .loginText1 {
+      color: rgb(179, 179, 179);
+    }
+
+    .or1,
+    .or2 {
+      width: 100px;
+      height: 10px;
+      border-bottom: solid 1px rgb(219, 219, 219);
+    }
+  }
+
+  .loginText2 {
+    color: rgb(56, 81, 133);
+    font-weight: bold;
+  }
+
+  .rightBox2 {
+    padding: 20px 97px;
+    margin: 10px 0px;
+    border: solid 1px rgb(219, 219, 219);
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 400;
+
+    .join {
+      color: rgb(90, 178, 212);
+    }
+  }
+
+  .rightBox3 {
+    margin: 0 auto;
+    font-size: 14px;
+
+    .rightbox3_p {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    img {
+      width: 270px;
+      height: 40px;
+    }
+  }
+
+  footer {
+    height: 15vh;
+
+    ul {
+      list-style: none;
+
+      li {
+        margin: 0px 7px;
+        color: rgb(175, 175, 175);
+        font-size: 12px;
+      }
+    }
+
+    .line1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 20px auto 5px auto;
+    }
+
+    .line2 {
+      display: flex;
+      justify-content: center;
+      margin: 7px auto 5px auto;
+    }
+
+    .line3 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 15px auto 5px;
+    }
+  }
+
+  .facebook {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skycolor {
+    background-color: skyblue;
+  }
+
+  .bluecolor {
+    background-color: blue;
+  }
+}
+@media screen and (max-width: 785px) {
+  .left {
+    display: none;
+  }
+  .main {
+    margin: 180px;
+  }
+}
