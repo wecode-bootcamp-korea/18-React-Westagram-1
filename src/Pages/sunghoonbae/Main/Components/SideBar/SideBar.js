@@ -10,6 +10,16 @@ class SideBar extends React.Component {
         }
     }
 
+    componentDidMount(){
+        fetch('http://localhost:3000/data/recommentFriendListData.json', {
+            method:'GET'
+        })
+        .then(res => res.json())
+        .then(data => this.setState({
+            friendRecommentList: data,
+        }))
+    }
+
     render() {
         return(
             <>
@@ -27,20 +37,13 @@ class SideBar extends React.Component {
                     <div className="friend_recommned_all right_box_font_size font_bold font_color_black">모두 보기</div>
                 </div>
                 <div className="friend_recommend_list mt-20">
-                    <div className="flex_align_center">
-                        <i className="fas fa-user-circle fa-2x font_color_gray"></i>
-                        <div className="friend__recommend_id ml-10">
-                            <div className="right_box_font_size font_color_id">hyjinnnnnnn</div>
-                            <div className="right_box_font_size font_color_gray mt-5">회원님을 팔로우 합니다</div>
-                        </div>
-                        <div className="follow right_box_font_size font_color_blue">팔로우</div>
-                    </div>
                     {this.state.friendRecommentList.map(list => {
                         return (
                             <FriendRecommentList
                                 key={list.id}
-                                name={list.name}
-                                content={list.content}
+                                name={list.userName}
+                                comment={list.content}
+                                img={list.img}
                             />
                         )
                     })}

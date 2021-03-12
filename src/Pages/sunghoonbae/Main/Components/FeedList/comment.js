@@ -4,7 +4,7 @@ class CommentInfo extends React.Component {
     render() {
         return(
             <>
-              <li>{this.props.key} {this.props.name} {this.props.comment} </li>
+              <li key={this.props.id}> {this.props.name} {this.props.comment} </li>
             </>
         )
     }

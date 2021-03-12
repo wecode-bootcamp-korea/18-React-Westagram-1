@@ -90,6 +90,7 @@
 .friend_profile_img img {
   width: 75px;
   border-radius: 50%;
+  height: 70px;
 }
 
 .friend_name {
@@ -146,14 +147,15 @@
   width: 100%;
   border: none;
   outline: none;
-  vertical-align: middle;
   resize: none;
+  height: 20px;
 }
 
 .comment_btn {
   margin-left: auto;
   white-space: nowrap; /* 줄바꿈 ㄴㄴ */
   color: #b3dffc;
+  font-size: 15px;
 }
 
 .right_box {
@@ -190,6 +192,10 @@
   cursor: pointer;
 }
 
+.friend__recomment__img {
+  width: 40px;
+  border-radius: 50%;
+}
 .mr-10 {
   margin-right: 10px;
 }
@@ -212,6 +218,10 @@
 
 .ml-10 {
   margin-left: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px
 }
 
 .test {
@@ -266,4 +276,11 @@
 
 .fa-heart-color {
   color: #ed4956;
+}
+
+.btn {
+  border: none;
+  background-color: #ffffff;
+  padding: 0px;
+  outline: none;
 }
