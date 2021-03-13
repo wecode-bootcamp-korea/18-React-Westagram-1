@@ -1,12 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import Routes from "./Routes";
+import "./Styles/reset.scss";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Login from './Pages/daeheelee/Login/Login'
-
-
-
-ReactDOM.render(
-  <Login />, document.getElementById('root')
-);
-
-
+ReactDOM.render(<Routes />, document.getElementById("root"));
