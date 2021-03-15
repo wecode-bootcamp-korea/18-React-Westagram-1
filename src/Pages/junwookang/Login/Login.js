@@ -8,8 +8,7 @@ import google from '../../../Images/junwookang/google-download.png';
 class Login extends Component {
   constructor() {
     super();
-    this.state={
-      btnColor: false,
+    this.state={      
       id: '',
       pw: '',      
     };
@@ -32,7 +31,7 @@ class Login extends Component {
         this.setState({btnColor: true});
       } else {
         this.setState({btnColor: false});
-      }    
+      }  
     })
   }
 
@@ -47,9 +46,26 @@ class Login extends Component {
   // };
   
   goToMain = () => {
-      if(this.state.id.length > 0 && this.state.pw.length >= 6)
+      if(this.state.id.includes("@") && this.state.pw.length >= 6)
       this.props.history.push('/main-junwoo');
+      //fetch("http://10.58.6.21:8000/user/signup", {method: "POST", body: JSON.stringify({email: "junwoo@naver.com", password: "12345678"})}).then(res => res.json()).then(res => console.log(res));
+      // fetch("http://10.58.6.21:8000/user/signin", {
+      //   method: "POST", 
+      //   body: JSON.stringify({
+      //     email: this.state.id, password: this.state.pw
+      //   })})
+      // .then(res => res.json())
+      // .then(res => {
+      //   //console.log(res);
+      //   if (res.message === "SUCCESS") {
+      //     localStorage.setItem('junwoo', res.access_token);
+      //     // 메인 페이지로 이동  
+      //     this.props.history.push('/main-junwoo');
+      //   }
+      // });
   };
+
+  
 
   render() {
     return (

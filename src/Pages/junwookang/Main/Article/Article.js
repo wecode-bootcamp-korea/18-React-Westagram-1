@@ -6,9 +6,11 @@ import wecode from '../../../../Images/junwookang/wecode.jpg';
 class Article extends Component {
   constructor() {
     super();
-    this.state = {
+    this.state = {      
       inputComment: '',
-      commentList: [], 
+      commentList: [],
+      heartBtn: false,
+      bookMarkBtn : false,      
     };
   }
 
@@ -20,8 +22,24 @@ class Article extends Component {
     this.setState({commentList: this.state.commentList.concat([this.state.inputComment])})
   }
 
-  render() {
-    console.log(this.state.commentList);
+  deleteBtn = (idx) => {   
+    let test = this.state.commentList;
+    test.splice(idx, 1);
+    this.setState({commentList: test})
+  }
+
+  heartBtnClick = (e) => {
+    this.setState({heartBtn: !this.state.heartBtn})  
+    //console.log(e);
+  }
+
+  bookMarkBtnClick = (e) => {
+    this.setState({bookMarkBtn: !this.state.bookMarkBtn})  
+    console.log(e);
+  }
+  
+  render() {    
+    //console.log(this.state.heartBtn);
     return (
       <main>
         <div class="main-story">
@@ -52,19 +70,24 @@ class Article extends Component {
               <ul class="comment-wrap">
               {/* <!--댓글 기능--> */}
                 {this.state.commentList.map((comm, idx) => {
-                  return <li key={idx}><img src={wecode} /><span class="userName">Junwoo Kang</span><span class="commentText">{comm}</span><button>delete</button></li>                    
+                  return <li key={idx}>
+                    <img src={wecode} />
+                    <span class="userName">Junwoo Kang</span>
+                    <span class="commentText">{comm}</span>
+                    <button onClick={() => this.deleteBtn(idx)}>delete</button>
+                  </li>                    
                   })}
               </ul>                   
             </div>
             <div class="story-option">
               <div class="icon">
-                <div class="icon-left">
-                  <i class="far fa-heart"></i>
+                <div class="icon-left">                  
+                  <div className={this.state.heartBtn ? "change" : "unchange"} onClick={this.heartBtnClick}><i class="far fa-heart"></i></div>
                   <i class="far fa-comment"></i>
                   <i class="far fa-paper-plane"></i>
                 </div>
                 <div class="icon-right">
-                  <i class="far fa-bookmark"></i>
+                  <div className={this.state.bookMarkBtn ? "change2" : "unchange2"} onClick={this.bookMarkBtnClick}><i class="far fa-bookmark"></i></div>
                 </div>              
               </div>
               <div class="option-good"><p>좋아요 107개</p></div>

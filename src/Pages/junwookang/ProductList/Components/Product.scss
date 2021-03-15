@@ -1,0 +1,24 @@
+.product {
+  margin: 10px;
+  position: relative;
+
+  .newMark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 7px;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+  }
+
+  .bestMark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 7px;
+    background-color: red;
+    color: white;
+    font-size: 15px;
+  }
+}
