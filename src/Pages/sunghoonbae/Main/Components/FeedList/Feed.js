@@ -6,9 +6,9 @@ class Feed extends React.Component {
     constructor() {
         super();
         this.state = {
-                feedList: [],
-             }           
-        }
+            feedList: [],
+        }           
+    }
     componentDidMount() {
         fetch('http://localhost:3000/data/feedData.json', {
             method: 'GET'

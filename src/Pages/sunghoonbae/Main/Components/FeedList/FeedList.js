@@ -38,8 +38,10 @@ class FeedList extends React.Component {
             })
         }
 
-        heartBtn = () => {
-
+        onChangeColor = () => {
+            this.setState({
+                
+            })
         }
     render() {
         return (
@@ -59,7 +61,7 @@ class FeedList extends React.Component {
                 </div>
                 <div className="feeds_area">
                     <div className="feeds_icon flex">
-                        <button onClick="" className="btn icon_cursor"><i className="far fa-heart fa-2x  mr-10" id="like_color" value="false"></i></button>
+                        <button onClick={this.onChangeColor} className="btn icon_cursor"><i className="far fa-heart fa-2x mr-10" id="like_color" value="false"></i></button>
                         <i className="far fa-comment fa-2x icon_cursor mr-10"></i>
                         <i className="far fa-paper-plane fa-2x icon_cursor mr-10"></i>
                         <i className="far fa-square fa-2x icon_cursor"></i>
