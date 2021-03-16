@@ -1,12 +1,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './Pages/daeheelee/Login/Login'
-
-
+import Routes from './Routes'
 
 ReactDOM.render(
-  <Login />, document.getElementById('root')
+  <Routes />, document.getElementById('root')
 );
 
 
